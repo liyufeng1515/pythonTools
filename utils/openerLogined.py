@@ -8,12 +8,12 @@ import sys
 sys.path.append("../")
 import config
 
-def login(ip,userName,password):
+def login(ip,username,password):
     try:
         cj = cookielib.CookieJar()
         opener=urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
         opener.addheaders = [('User-agent','Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)')]
-        data = urllib.urlencode({"USERNAME":userName,"PASSWORD":password})
+        data = urllib.urlencode({"USERNAME":username,"PASSWORD":password})
 	htmlPage = opener.open(config.loginUrl(ip),data).read()
 	soup = BeautifulSoup(htmlPage,"html.parser",from_encoding="utf-8")
 	div = soup.find("div",class_="content-messages errorMessage")
