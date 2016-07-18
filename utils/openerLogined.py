@@ -3,9 +3,6 @@ import urllib2
 import urllib
 import cookielib
 from bs4 import BeautifulSoup
-
-import sys
-sys.path.append("../")
 import config
 
 def login(ip,username,password):
@@ -22,7 +19,9 @@ def login(ip,username,password):
 		return opener
 	else:
 		for i in div.contents:
-			print i.string
+			if '' == i.string.strip():
+				continue
+			print i.string.strip()
 		raw_input('\nLogin failed. Press enter key to quit.')
 		sys.exit(0)
     except Exception,e:
