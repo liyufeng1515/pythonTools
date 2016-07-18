@@ -3,7 +3,6 @@ import urllib
 import sys
 from bs4 import BeautifulSoup
 sys.path.append("../utils/")
-sys.path.append("../")
 import openerLogined
 import config
 
