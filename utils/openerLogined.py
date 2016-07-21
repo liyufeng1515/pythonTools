@@ -15,14 +15,14 @@ def login(ip,username,password):
 	soup = BeautifulSoup(htmlPage,"html.parser",from_encoding="utf-8")
 	div = soup.find("div",class_="content-messages errorMessage")
 	if None == div:
-		print '\nLogin success.'
+		print '\nLogin success.\n'
 		return opener
 	else:
 		for i in div.contents:
 			if '' == i.string.strip():
 				continue
 			print i.string.strip()
-		raw_input('\nLogin failed. Press enter key to quit.')
+		raw_input('\nLogin failed. Press enter key to quit.\n')
 		sys.exit(0)
     except Exception,e:
         print str(e)
