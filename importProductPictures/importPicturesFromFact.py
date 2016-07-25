@@ -6,7 +6,7 @@ sys.path.append("../utils/")
 import config
 import openerLogined
 
-opener = openerLogined.login(config.erpIP80,config.username,config.password)
+opener = openerLogined.login(config.loginUrl(config.erpIP80),config.username,config.password)
 
 print("Run service importAllProductPicturesFromProductContentFact.")
 data = urllib.urlencode({"SERVICE_NAME":"importAllProductPicturesFromProductContentFact","_RUN_SYNC_":"Y","POOL_NAME":"pool"})

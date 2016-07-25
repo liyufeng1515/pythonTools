@@ -6,7 +6,7 @@ sys.path.append("../utils/")
 import openerLogined
 import config
 
-opener = openerLogined.login(config.olapIP90,config.username,config.password)
+opener = openerLogined.login(config.loginUrl(config.olapIP90),config.username,config.password)
 
 data = urllib.urlencode({"SERVICE_NAME":"zuczug.loadAllProductsInProductDimension","_RUN_SYNC_":"Y","POOL_NAME":"pool"})
 htmlPage = opener.open(config.serviceUrl(config.olapIP90),data).read()

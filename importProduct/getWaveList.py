@@ -6,7 +6,7 @@ sys.path.append("../utils/")
 import openerLogined
 import config
 
-opener = openerLogined.login(config.megatronIP80,config.username,config.password)
+opener = openerLogined.login(config.loginUrl(config.megatronIP80),config.username,config.password)
 
 data = urllib.urlencode({"group":"org.ofbiz","sqlCommand":"SELECT PRODUCT_CATEGORY_ID, CATEGORY_NAME FROM PRODUCT_CATEGORY WHERE PRODUCT_CATEGORY_TYPE_ID ='WAVE'","rowLimit":"2000"})
 htmlPage = opener.open(config.entityUrl(config.megatronIP80),data).read()

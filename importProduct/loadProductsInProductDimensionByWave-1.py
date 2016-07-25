@@ -6,7 +6,7 @@ sys.path.append("../utils/")
 import config
 import openerLogined
 
-opener = openerLogined.login(config.olapIP90,config.username,config.password)
+opener = openerLogined.login(config.loginUrl(config.olapIP90),config.username,config.password)
 
 productCategoryId = raw_input("\nInput wave product category id ,Press the enter key to exit.\n")
 print 'Get productCategoryId='+productCategoryId+', Run service zuczug.accordingWavebandLoadProductsInProductDimension.' 

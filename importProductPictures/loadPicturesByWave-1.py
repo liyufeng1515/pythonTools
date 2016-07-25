@@ -6,7 +6,7 @@ sys.path.append("../utils/")
 import config
 import openerLogined
 
-opener = openerLogined.login(config.olapIP90,config.username,config.password)
+opener = openerLogined.login(config.loginUrl(config.olapIP90),config.username,config.password)
 #clear entity
 data = urllib.urlencode({"group":"org.ofbiz.olap","sqlCommand":"TRUNCATE TABLE PRODUCT_CONTENT_FACT","rowLimit":"200"})
 htmlPage = opener.open(config.entityUrl(config.olapIP90),data).read()
